@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sủa sinh viên</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="container">
+    <h3><a href="/students">Danh sách sinh viên</a></h3>
+    <h1>Danh sách sinh viên</h1>
+    <form action="/students/update/<%= student._id%>" method="post">
+      <div class="form-group">
+        <label>Tên</label>
+        <input type="text" name="name" value="<%= student.name %>" required class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Tuổi</label>
+        <input type="number" name="age" value="<%= student.age %>" required class="form-control"></input>
+      </div>
+      <div class="form-group">
+        <label>Giới tính</label>
+        <input type="radio" id="male" name="gender" value="male" <%= student.gender === "male" ? "checked" : null %>>
+        <label for="male">Nam</label>
+        <input type="radio" id="female" name="gender" value="female"
+          <%= student.gender === "female" ? "checked" : null %>>
+        <label for="female">Nữ</label>
+        <input type="radio" id="other" name="gender" value="other" <%= student.gender === "other" ? "checked" : null %>>
+        <label for="other">Khác</label>
+      </div>
+      <div class="form-group">
+        <label>Lớp</label>
+        <input type="text" name="className" value="<%= student.className %>" required class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Địa chỉ</label>
+        <td><textarea type="text" name="address" required class="form-control"><%= student.address %></textarea>
+      </div>
+      <div class="form-group">
+        <label>email</label>
+        <input type="email" name="email" value="<%= student.email %>" required class="form-control" />
+      </div>
+      <div class="form-group">
+        <label>Đường dẫn ảnh đại diện</label>
+        <input type="text" name="image" value="<%= student.image %>" class="form-control" />
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-info">Sửa</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

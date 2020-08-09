@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Chi tiết sinh viên</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div
+    style="position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%); background: #fcfcfc;min-width: 500px;">
+    <h3><a href="/students">Danh sách sinh viên</a></h3>
+    <h1>Chi tiết sinh viên</h1>
+    <table>
+      <tbody>
+        <tr>
+          <td>Tên</td>
+          <td>:</td>
+          <td><%= student.name %></td>
+        </tr>
+        <tr>
+          <td>Tuổi</td>
+          <td>:</td>
+          <td><%= student.age %></td>
+        </tr>
+        <tr>
+          <td>Giới tính</td>
+          <td>:</td>
+          <td><%= student.gender %></td>
+        </tr>
+        <tr>
+          <td>Lớp</td>
+          <td>:</td>
+          <td><%= student.className %></td>
+        </tr>
+        <tr>
+          <td>email</td>
+          <td>:</td>
+          <td><%= student.email %></td>
+        </tr>
+        <tr>
+          <td>Địa chỉ</td>
+          <td>:</td>
+          <td><%= student.address %></td>
+        </tr>
+        <tr>
+          <td>Ảnh đại diện</td>
+          <td>:</td>
+          <td><img src="<%= student.image %>" /></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="display: flex;">
+      <h3 style="margin-right:10px;"><a href="/students/edit/<%= student._id%>" class="btn btn-info">Sửa</a></h3>
+      <form action="/students/delete/<%= student._id%>" method="post">
+        <button type="submit" class="btn btn-danger">Xóa</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

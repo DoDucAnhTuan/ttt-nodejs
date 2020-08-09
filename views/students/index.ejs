@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Danh sách sinh viên</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <div class="container">
+    <h3><a href="/students/create">Thêm mới sinh viên</a></h3>
+    <h1>Danh sách</h1>
+    <% if(students.length>0) { %>
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th>Tên</th>
+          <th>Tuổi</th>
+          <th>Giới tính</th>
+          <th>Lớp</th>
+          <th>Email</th>
+          <th>Ảnh đại diện</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(var i=0; i<students.length;i++) { %>
+        <tr>
+          <td><a href="/students/show/<%= students[i]._id%>"><%= students[i].name%></a></td>
+          <td><%= students[i].age%></td>
+          <td><%= students[i].gender%></td>
+          <td><%= students[i].className%></td>
+          <td><%= students[i].email%></td>
+          <td><img src="<%= students[i].image%>" /></td>
+        </tr>
+        <% } %>
+      </tbody>
+    </table>
+    <% } else { %>
+    <div>Không tìm thấy sinh viên nào.</div>
+    <% } %>
+  </div>
+</body>
+
+</html>
