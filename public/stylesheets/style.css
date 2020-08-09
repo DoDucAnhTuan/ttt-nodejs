@@ -3,6 +3,10 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   color: #555555;
   margin: 0;
+  background-image: url("https://thuthuatnhanh.com/wp-content/uploads/2020/01/background-powerpoint-dep.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #000;
 }
 
 a {
